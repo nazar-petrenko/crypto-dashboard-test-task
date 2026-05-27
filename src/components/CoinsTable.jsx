@@ -27,7 +27,7 @@ const columns = [
         render: (_, coin) => (
             <Space size="middle">
                 <Avatar src={coin.image} alt={coin.name} />
-                <Space direction="vertical" size={0}>
+                <Space orientation="vertical" size={0}>
                     <Typography.Text strong>{coin.name}</Typography.Text>
                     <Typography.Text type="secondary">
                         {coin.symbol.toUpperCase()}

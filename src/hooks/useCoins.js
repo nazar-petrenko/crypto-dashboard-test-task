@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 async function fetchCoins({ queryKey }) {
     const [, params] = queryKey;
@@ -25,6 +25,7 @@ export function useCoins(options = {}) {
     return useQuery({
         queryKey: ["coins", { vsCurrency, perPage, page }],
         queryFn: fetchCoins,
+        placeholderData: keepPreviousData,
         staleTime: 30_000,
     });
 }
